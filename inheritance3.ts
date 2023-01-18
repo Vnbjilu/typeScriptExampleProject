@@ -9,8 +9,23 @@ class User{
 }
 
 class Staff extends User{
+    get stId():number{
+        return this.stfId;
+    }
+    set stId(stId:number){
+        this.stfId = stId;
+    }
+    get stEmailId():string{
+        return this.email;
+    }
+    set stEmailId(emailId:string){
+        this.email = emailId;
+    }
+    get stContact():string{
+        return this.contact;
+    }
     constructor(
-        protected staffId:number,
+        protected stfId:number,
         fname:string,
         protected middleName:string,
         lname:string,
@@ -20,28 +35,7 @@ class Staff extends User{
             super(fname,lname,age,contact);
 
         }
-        get StaffId():number
-        {
-            return this.staffId;
-        }
-        set StaffId(staffd:number)
-        {
-            this.staffId = staffd;
-        }
-        set staffMiddleName(middlename:string)
-        {
-            this.middleName = middlename;
-        }
-        set staffEmailId(emailid:string)
-        {
-            this.email = emailid;
-        }
-        get staffEmailId():string{
-            return this.email;
-        }
-        get staffMiddleName():string{
-            return this.middleName;
-        }
+        
         getFullName():string{
             return `Name: ${this.fname} ${this.middleName} ${this.lname} `;
         }
@@ -54,4 +48,5 @@ class Staff extends User{
     }
     const Manager:Staff=new Staff(1,'vikas','kumar','srivastava',45,'8009492817','vikas1@gmail.com');
     console.log("full name: "+Manager.getFullName());
-    
+    console.log(Manager.stEmailId);
+
